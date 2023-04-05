@@ -1,8 +1,8 @@
 export {};
 
-const board: Element = document.querySelector(".board");
-const scoreElement: Element = document.querySelector(".score");
-const highScoreElement: Element = document.querySelector(".high-score");
+const board: Element = document.querySelector(".board")!;
+const scoreElement: Element = document.querySelector(".score")!;
+const highScoreElement: Element = document.querySelector(".high-score")!;
 const controls: NodeListOf<Element> = document.querySelectorAll(".controls i");
 
 let gameOver: boolean = false;
@@ -53,11 +53,12 @@ const changeDirection = (e: KeyboardEvent | any): void => {
 
 // Change Direction on each key click
 
-controls.forEach((button): void =>
-  button.addEventListener("click", (): void =>
-    changeDirection({ key: button.dataset.key })
-  )
-);
+controls.forEach((button: Element): void => {
+  if (button instanceof HTMLElement)
+    button.addEventListener("click", (): void => {
+      changeDirection({ key: button.dataset.key });
+    });
+});
 
 const initGame = (): void | true => {
   if (gameOver) return handleGameOver();
