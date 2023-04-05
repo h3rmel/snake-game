@@ -1,0 +1,7 @@
+.details {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+}

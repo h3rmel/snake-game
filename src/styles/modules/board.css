@@ -1,0 +1,15 @@
+.board {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+  background: var(--gray-dark);
+}
+
+.board .food {
+  background-color: var(--red);
+}
+
+.board .head {
+  background: var(--blue);
+}

@@ -1,0 +1,22 @@
+.controls {
+  display: flex;
+}
+
+.controls i {
+  width: calc(100% / 4);
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.controls i:hover {
+  background: var(--gray-light);
+}
+
+@media screen and (min-width: 769px) {
+  .controls {
+    display: none;
+  }
+}

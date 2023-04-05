@@ -1,0 +1,17 @@
+.game {
+  width: 90vmin;
+  height: 115vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--gray);
+  border-radius: 1.5rem;
+}
+
+@media screen and (min-width: 769px) {
+  .game {
+    width: 65vmin;
+    height: 70vmin;
+  }
+}
