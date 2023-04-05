@@ -1,3 +1,5 @@
+export {};
+
 const board: Element = document.querySelector(".board");
 const scoreElement: Element = document.querySelector(".score");
 const highScoreElement: Element = document.querySelector(".high-score");
