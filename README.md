@@ -6,6 +6,7 @@ Jogo da cobrinha simples feito com HTML5, CSS3 e TypeScript. (Utilizei ViteJS ta
 
 O projeto se encontra atualmente hospedado na [Vercel](https://vercel.com) na seguinte URL:
 
+https://snake-game-h3rmel.vercel.app/
 
 ## Rodando o projeto 🚀
 
