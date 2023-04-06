@@ -10,7 +10,6 @@ export default defineConfig({
       devOptions: {
         enabled: true,
       },
-      scope: "./",
       manifest: {
         name: "Snake Game",
         short_name: "Snake Game",
