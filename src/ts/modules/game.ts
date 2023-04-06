@@ -39,31 +39,25 @@ export const updateFoodPosition = (): number[] =>
 
 // Acaba o jogo caso cobra bater.
 const handleGameOver = () => {
-  clearInterval(setGameInterval);
-  alert(
+  const message =
     score === 900
       ? "Parabéns! Você ganhou o jogo! Pressione OK para recomeçar..."
-      : "Game Over! Pressione OK para recomeçar..."
-  );
+      : "Game Over! Pressione OK para recomeçar...";
+  clearInterval(setGameInterval);
+  alert(message);
   location.reload();
 };
 
-// Constantes para métodos de velocidade
-const UP: number = -1,
-  LEFT: number = -1;
-const DOWN: number = 1,
-  RIGHT: number = 1;
-
 // Manipula velocidade baseado nas setinhas do teclado e controles do celular
 export const changeDirection = (e: KeyboardEvent | any): void => {
-  if (e.key === "ArrowUp" && velocity[1] !== DOWN)
-    return updateVelocity(velocity, 0, UP);
-  if (e.key === "ArrowDown" && velocity[1] !== UP)
-    return updateVelocity(velocity, 0, DOWN);
-  if (e.key === "ArrowLeft" && velocity[0] !== RIGHT)
-    return updateVelocity(velocity, LEFT, 0);
-  if (e.key === "ArrowRight" && velocity[0] !== LEFT)
-    return updateVelocity(velocity, RIGHT, 0);
+  if (e.key === "ArrowUp" && velocity[1] !== 1)
+    return updateVelocity(velocity, 0, -1);
+  if (e.key === "ArrowDown" && velocity[1] !== -1)
+    return updateVelocity(velocity, 0, 1);
+  if (e.key === "ArrowLeft" && velocity[0] !== 1)
+    return updateVelocity(velocity, -1, 0);
+  if (e.key === "ArrowRight" && velocity[0] !== -1)
+    return updateVelocity(velocity, 1, 0);
 };
 
 // EventListener para mudar direção baseada em qual tecla foi pressionada
