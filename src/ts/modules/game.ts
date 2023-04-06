@@ -17,7 +17,7 @@ let foodPos: number[];
 let snakePos: number[] = [5, 5];
 let velocity: number[] = [0, 0];
 let snakeBody: any[] = [];
-let setGameInterval: number;
+let setGameInterval: any;
 
 //#endregion
 
