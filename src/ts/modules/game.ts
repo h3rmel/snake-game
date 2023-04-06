@@ -1,3 +1,5 @@
+import { updateScores, updateVelocity } from "./gameUtils";
+
 //#region Elements
 
 const boardElement: Element = document.querySelector(".board")!;
@@ -24,7 +26,7 @@ let setGameInterval: number;
 let score: number = 0;
 let highScore: number = Number(localStorage.getItem("high-score")) || 0;
 
-highScoreElement.innerHTML = `High Score ${highScore}`;
+highScoreElement.innerHTML = `High Score: ${highScore}`;
 
 //#endregion
 
@@ -38,7 +40,11 @@ export const updateFoodPosition = (): number[] =>
 // Acaba o jogo caso cobra bater.
 const handleGameOver = () => {
   clearInterval(setGameInterval);
-  alert("Game Over! Pressione OK para recomeçar...");
+  alert(
+    score === 900
+      ? "Parabéns! Você ganhou o jogo! Pressione OK para recomeçar..."
+      : "Game Over! Pressione OK para recomeçar..."
+  );
   location.reload();
 };
 
@@ -48,20 +54,16 @@ const UP: number = -1,
 const DOWN: number = 1,
   RIGHT: number = 1;
 
-const updateVelocity = (vx: number, vy: number) => {
-  velocity[0] = vx;
-  velocity[1] = vy;
-};
-
 // Manipula velocidade baseado nas setinhas do teclado e controles do celular
 export const changeDirection = (e: KeyboardEvent | any): void => {
-  if (e.key === "ArrowUp" && velocity[1] !== DOWN) return updateVelocity(0, UP);
+  if (e.key === "ArrowUp" && velocity[1] !== DOWN)
+    return updateVelocity(velocity, 0, UP);
   if (e.key === "ArrowDown" && velocity[1] !== UP)
-    return updateVelocity(0, DOWN);
+    return updateVelocity(velocity, 0, DOWN);
   if (e.key === "ArrowLeft" && velocity[0] !== RIGHT)
-    return updateVelocity(LEFT, 0);
+    return updateVelocity(velocity, LEFT, 0);
   if (e.key === "ArrowRight" && velocity[0] !== LEFT)
-    return updateVelocity(RIGHT, 0);
+    return updateVelocity(velocity, RIGHT, 0);
 };
 
 // EventListener para mudar direção baseada em qual tecla foi pressionada
@@ -72,15 +74,6 @@ controlsElements.forEach((button): void => {
     });
 });
 
-const updateScores = (): void => {
-  score++;
-  highScore = score >= highScore ? score : highScore;
-
-  localStorage.setItem("high-score", String(highScore));
-  scoreElement.innerHTML = `Score: ${score}`;
-  highScoreElement.innerHTML = `High Score: ${highScore}`;
-};
-
 // Método responsável por iniciar e rodar o jogo
 const runGame = (): true | void => {
   if (gameOver) return handleGameOver();
@@ -90,7 +83,7 @@ const runGame = (): true | void => {
   if (snakePos[0] === foodPos[0] && snakePos[1] === foodPos[1]) {
     updateFoodPosition();
     snakeBody.push([foodPos[1], foodPos[0]]);
-    updateScores();
+    updateScores(scoreElement, highScoreElement, score, highScore);
   }
 
   snakePos[0] += velocity[0];
