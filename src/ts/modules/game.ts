@@ -26,7 +26,7 @@ let setGameInterval: number;
 let score: number = 0;
 let highScore: number = Number(localStorage.getItem("high-score")) || 0;
 
-highScoreElement.innerHTML = `High Score: ${highScore}`;
+highScoreElement.innerHTML = `High Score -&gt; ${highScore}`;
 
 //#endregion
 

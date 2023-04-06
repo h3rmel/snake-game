@@ -13,6 +13,6 @@ export const updateScores = (
   highScore = score >= highScore ? score : highScore;
 
   localStorage.setItem("high-score", String(highScore));
-  scoreElement.innerHTML = `Score: ${score}`;
-  highScoreElement.innerHTML = `High Score: ${highScore}`;
+  scoreElement.innerHTML = `Score -&gt; ${score}`;
+  highScoreElement.innerHTML = `High Score -&gt; ${highScore}`;
 };
