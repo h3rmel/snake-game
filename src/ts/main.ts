@@ -11,3 +11,8 @@ buttonElement.addEventListener("click", toggleColorMode);
 
 updateFoodPosition();
 document.addEventListener("keyup", changeDirection);
+
+// Service Worker
+
+if ("serviceWorker" in navigator)
+  navigator.serviceWorker.register("./service-worker.js");

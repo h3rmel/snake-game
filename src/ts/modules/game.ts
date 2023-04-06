@@ -17,7 +17,7 @@ let foodPos: number[];
 let snakePos: number[] = [5, 5];
 let velocity: number[] = [0, 0];
 let snakeBody: any[] = [];
-let setGameInterval: number;
+let setGameInterval: any;
 
 //#endregion
 
@@ -45,8 +45,6 @@ const handleGameOver = () => {
       ? "Parabéns! Você ganhou o jogo! Pressione OK para recomeçar..."
       : "Game Over! Pressione OK para recomeçar...";
   clearInterval(setGameInterval);
-  alert(message);
-  location.reload();
   alert(message);
   location.reload();
 };
