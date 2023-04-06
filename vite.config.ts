@@ -10,6 +10,7 @@ export default defineConfig({
       devOptions: {
         enabled: true,
       },
+      scope: "./",
       manifest: {
         name: "Snake Game",
         short_name: "Snake Game",
@@ -18,7 +19,6 @@ export default defineConfig({
         background_color: "#141d2f",
         display: "fullscreen",
         orientation: "portrait",
-        start_url: "https://snake-game-git-pwa-h3rmel.vercel.app/",
         icons: [
           {
             src: "./icons/manifest-icon-192.maskable.png",
