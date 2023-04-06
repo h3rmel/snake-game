@@ -3,7 +3,6 @@
   height: 100%;
   display: grid;
   grid-template: repeat(30, 1fr) / repeat(30, 1fr);
-  background: var(--gray-dark);
 }
 
 .board .food {
@@ -12,4 +11,8 @@
 
 .board .head {
   background: var(--blue);
+}
+
+.dark .board {
+  background-color: var(--gray-dark);
 }

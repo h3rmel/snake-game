@@ -5,8 +5,10 @@
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
-  background-color: var(--gray);
+  background-color: var(--lightest);
   border-radius: 1.5rem;
+  box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.15);
+
 }
 
 @media screen and (min-width: 769px) {
@@ -14,4 +16,9 @@
     width: 65vmin;
     height: 70vmin;
   }
+}
+
+.dark .game {
+  background-color: var(--gray);
+  box-shadow: none;
 }

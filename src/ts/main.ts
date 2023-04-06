@@ -1,4 +1,8 @@
-export {};
+import { toggleColorMode } from "./modules/toggleColorMode";
+
+const buttonElement: Element = document.querySelector(".toggleColorMode")!;
+
+buttonElement.addEventListener("click", toggleColorMode);
 
 const board: Element = document.querySelector(".board")!;
 const scoreElement: Element = document.querySelector(".score")!;

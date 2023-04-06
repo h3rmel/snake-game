@@ -12,6 +12,10 @@
 }
 
 .controls i:hover {
+  background: var(--light-dark);
+}
+
+.dark .controls i:hover {
   background: var(--gray-light);
 }
 

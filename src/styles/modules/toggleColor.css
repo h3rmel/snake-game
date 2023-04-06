@@ -1,0 +1,37 @@
+.toggleColorMode {
+  position: absolute;
+  top: 1rem;
+  padding: 1rem;
+  border: 0;
+  border-radius: 0.75rem;
+  background-color: var(--lightest);
+  color: var(--dark);
+  box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.toggleColorMode i {
+  font-size: 2rem;
+}
+
+.toggleColorMode .ph-moon {
+  display: none;
+}
+
+.toggleColorMode .ph-sun {
+  display: inline-flex;
+}
+
+.dark .toggleColorMode {
+  background-color: var(--gray);
+  color: var(--light);
+}
+
+.dark .toggleColorMode .ph-sun {
+  display: none;
+}
+
+.dark .toggleColorMode .ph-moon {
+  display: inline-flex;
+}

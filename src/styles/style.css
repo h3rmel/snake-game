@@ -6,6 +6,7 @@
 @import url("modules/details.css");
 @import url("modules/board.css");
 @import url("modules/controls.css");
+@import url("modules/toggleColor.css");
 
 :root {
   font-family: "Inter", sans-serif;
@@ -21,7 +22,9 @@
   -webkit-text-size-adjust: 100%;
 
   /* Variables */
+  --light-dark: #efefef;
   --light: #f6f8ff;
+  --lightest: #fefefe;
   --dark: #141d2f;
   --gray-dark: #182239;
   --gray: #1e2a47;
@@ -42,6 +45,11 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+body.dark {
   background-color: var(--dark);
   color: var(--light);
 }
