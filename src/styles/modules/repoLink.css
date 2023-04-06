@@ -1,0 +1,12 @@
+.repo-link {
+  position: absolute;
+  bottom: 1rem;
+  padding: 0.5rem 1rem;
+  color: var(--blue);
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.repo-link:hover {
+  text-decoration: underline;
+}
