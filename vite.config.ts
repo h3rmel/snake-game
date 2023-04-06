@@ -6,6 +6,10 @@ export default defineConfig({
   plugins: [
     VitePWA({
       registerType: "autoUpdate",
+      injectRegister: "script",
+      devOptions: {
+        enabled: true,
+      },
     }),
   ],
 });
