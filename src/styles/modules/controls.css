@@ -5,10 +5,15 @@
 .controls i {
   width: calc(100% / 4);
   padding: 1.5rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   text-align: center;
   font-size: 1.3rem;
   cursor: pointer;
   transition: 300ms;
+}
+
+.dark .controls {
+  border-top: 0;
 }
 
 .controls i:hover {
