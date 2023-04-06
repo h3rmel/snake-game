@@ -29,13 +29,11 @@ highScoreElement.innerHTML = `High Score ${highScore}`;
 //#endregion
 
 // Atualiza a posição da comida com base no grid 30x30 do jogo
-export const updateFoodPosition = (): number[] => {
+export const updateFoodPosition = (): number[] =>
   (foodPos = [
     Math.floor(Math.random() * 30) + 1,
     Math.floor(Math.random() * 30) + 1,
   ]);
-}
-  
 
 // Acaba o jogo caso cobra bater.
 const handleGameOver = () => {
