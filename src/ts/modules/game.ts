@@ -47,8 +47,6 @@ const handleGameOver = () => {
   clearInterval(setGameInterval);
   alert(message);
   location.reload();
-  alert(message);
-  location.reload();
 };
 
 // Constantes para métodos de velocidade
