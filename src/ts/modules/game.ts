@@ -1,5 +1,3 @@
-import { updateScores, updateVelocity } from "./gameUtils";
-
 //#region Elements
 
 const boardElement: Element = document.querySelector(".board")!;
@@ -38,7 +36,7 @@ export const updateFoodPosition = (): number[] =>
   ]);
 
 // Acaba o jogo caso cobra bater.
-const handleGameOver = () => {
+const handleGameOver = (): void => {
   clearInterval(setGameInterval);
   const message =
     score === 900
@@ -47,6 +45,15 @@ const handleGameOver = () => {
   clearInterval(setGameInterval);
   alert(message);
   location.reload();
+};
+
+export const updateVelocity = (
+  velocity: number[],
+  vx: number,
+  vy: number
+): void => {
+  velocity[0] = vx;
+  velocity[1] = vy;
 };
 
 // Constantes para métodos de velocidade
@@ -75,6 +82,15 @@ controlsElements.forEach((button): void => {
     });
 });
 
+export const updateScores = (): void => {
+  score++;
+  highScore = score >= highScore ? score : highScore;
+
+  localStorage.setItem("high-score", String(highScore));
+  scoreElement.innerHTML = `Score -&gt; ${score}`;
+  highScoreElement.innerHTML = `High Score -&gt; ${highScore}`;
+};
+
 // Método responsável por iniciar e rodar o jogo
 const runGame = (): true | void => {
   if (gameOver) return handleGameOver();
@@ -84,7 +100,7 @@ const runGame = (): true | void => {
   if (snakePos[0] === foodPos[0] && snakePos[1] === foodPos[1]) {
     updateFoodPosition();
     snakeBody.push([foodPos[1], foodPos[0]]);
-    updateScores(scoreElement, highScoreElement, score, highScore);
+    updateScores();
   }
 
   snakePos[0] += velocity[0];
