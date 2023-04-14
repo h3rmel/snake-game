@@ -29,7 +29,7 @@ highScoreElement.innerHTML = `High Score -&gt; ${highScore}`;
 //#endregion
 
 // Atualiza a posição da comida com base no grid 30x30 do jogo
-export const updateFoodPosition = (): number[] =>
+export const updateFoodPosition = () =>
   (foodPos = [
     Math.floor(Math.random() * 30) + 1,
     Math.floor(Math.random() * 30) + 1,
@@ -63,7 +63,7 @@ const DOWN: number = 1,
   RIGHT: number = 1;
 
 // Manipula velocidade baseado nas setinhas do teclado e controles do celular
-export const changeDirection = (e: KeyboardEvent | any): void => {
+export const changeDirection = (e: KeyboardEvent | any) => {
   if (e.key === "ArrowUp" && velocity[1] !== DOWN)
     return updateVelocity(velocity, 0, UP);
   if (e.key === "ArrowDown" && velocity[1] !== UP)
@@ -75,14 +75,14 @@ export const changeDirection = (e: KeyboardEvent | any): void => {
 };
 
 // EventListener para mudar direção baseada em qual tecla foi pressionada
-controlsElements.forEach((button): void => {
+controlsElements.forEach((button) => {
   if (button instanceof HTMLElement)
-    button.addEventListener("click", (): void => {
+    button.addEventListener("click", () => {
       changeDirection({ key: button.dataset.key });
     });
 });
 
-export const updateScores = (): void => {
+export const updateScores = () => {
   score++;
   highScore = score >= highScore ? score : highScore;
 
