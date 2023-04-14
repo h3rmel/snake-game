@@ -15,4 +15,6 @@ document.addEventListener("keyup", changeDirection);
 // Service Worker
 
 if ("serviceWorker" in navigator)
-  navigator.serviceWorker.register("./service-worker.js");
+  navigator.serviceWorker.register("./modules/sw.ts", { scope: "/" }).then(() => {
+    console.log("Service Work Registerd!");
+  });

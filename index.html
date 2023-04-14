@@ -1,34 +1,72 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
   <head>
     <meta charset="UTF-8" />
-    <link
-      rel="icon"
-      href="/logo.png"
-      />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Simple Snake Game developed with TypeScript."
+    />
+    <meta name="keywords" content="Snake Game, HTML5, CSS3, TypeScript, ViteJS" />
+    <meta name="author" content="Isaac Hermel" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/logo.png" />
     <title>Snake Game</title>
-    <!-- Icons -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css">
     <link rel="stylesheet" href="./src/styles/style.css" />
+    <link rel="manifest" href="manifest.json">
   </head>
   <body>
-    <button class="toggleColorMode" title="Change color mode button">
+    <button
+      class="toggleColorMode"
+      title="Change color mode button"
+      aria-label="Toggle color mode"
+      aria-pressed="false"
+    >
       <i class="ph ph-sun"></i>
       <i class="ph ph-moon"></i>
     </button>
-    <main class="game">
-      <div class="details">
-        <span class="score">Score -&gt; 0</span>
-        <span class="high-score">High Score -&gt; 0</span>
-      </div>
-      <div class="board"></div>
-      <div class="controls">
-        <i data-key="ArrowLeft" class="ph ph-arrow-left"></i>
-        <i data-key="ArrowUp" class="ph ph-arrow-up"></i>
-        <i data-key="ArrowRight" class="ph ph-arrow-right"></i>
-        <i data-key="ArrowDown" class="ph ph-arrow-down"></i>
-      </div>
+    <main class="game" aria-live="polite">
+      <section class="details">
+        <span class="score" aria-live="assertive">Score -&gt; 0</span>
+        <span class="high-score" aria-live="assertive">High Score -&gt; 0</span>
+      </section>
+      <section
+        class="board"
+        role="grid"
+        tabindex="0"
+        aria-label="Game board"
+      ></section>
+      <section class="controls">
+        <i
+          data-key="ArrowLeft"
+          class="ph ph-arrow-left"
+          role="button"
+          tabindex="0"
+          aria-label="Move left"
+        ></i>
+        <i
+          data-key="ArrowUp"
+          class="ph ph-arrow-up"
+          role="button"
+          tabindex="0"
+          aria-label="Move up"
+        ></i>
+        <i
+          data-key="ArrowRight"
+          class="ph ph-arrow-right"
+          role="button"
+          tabindex="0"
+          aria-label="Move right"
+        ></i>
+        <i
+          data-key="ArrowDown"
+          class="ph ph-arrow-down"
+          role="button"
+          tabindex="0"
+          aria-label="Move down"
+        ></i>
+      </section>
     </main>
     <a
       class="repo-link"
