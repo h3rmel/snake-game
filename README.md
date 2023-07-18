@@ -13,13 +13,13 @@ https://snake-game-h3rmel.vercel.app/
 Para rodar o projeto é bastante simples, basta clonar ele:
 
 ```
-  git clone https://github.com/H3rmel/snake-game.git
+git clone https://github.com/H3rmel/snake-game.git
 ```
 
 E após isso, acessar o repositório e digitar o seguinte comando:
 
 ```
-  npm i && npm run dev
+npm i && npm run dev
 ```
 
 Se tudo estiver correto, você verá uma mensagem como essa:
@@ -27,7 +27,7 @@ Se tudo estiver correto, você verá uma mensagem como essa:
 ```
 VITE v4.2.1  ready in 205 ms
 
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
-  ➜  press h to show help
+➜  Local:   http://localhost:5173/
+➜  Network: use --host to expose
+➜  press h to show help
 ```
