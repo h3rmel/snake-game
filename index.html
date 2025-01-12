@@ -13,9 +13,15 @@
     <link rel="icon" href="/logo.png" />
     <title>Snake Game</title>
     <link rel="stylesheet" href="./src/styles/style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
     <!-- <link rel="manifest" href="manifest.json"> -->
   </head>
   <body>
+    <!-- Toggle color -->
     <button
       class="toggleColorMode"
       title="Change color mode button"
@@ -25,17 +31,21 @@
       <i class="ph ph-sun"></i>
       <i class="ph ph-moon"></i>
     </button>
+    <!-- Game Display -->
     <main class="game" aria-live="polite">
+      <!-- Informations -->
       <section class="details">
         <span class="score" aria-live="assertive">Score -&gt; 0</span>
         <span class="high-score" aria-live="assertive">High Score -&gt; 0</span>
       </section>
+      <!-- Game Board -->
       <section
         class="board"
         role="grid"
         tabindex="0"
         aria-label="Game board"
       ></section>
+      <!-- Game Controls -->
       <section class="controls">
         <i
           data-key="ArrowLeft"
@@ -67,6 +77,7 @@
         ></i>
       </section>
     </main>
+    <!-- Project informations -->
     <a
       class="repo-link"
       href="https://github.com/H3rmel/snake-game"

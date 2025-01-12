@@ -2,8 +2,6 @@
 
 @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
 
-@import "@phosphor-icons/web/src/regular/style.css";
-
 @import url("modules/game.css");
 @import url("modules/details.css");
 @import url("modules/board.css");

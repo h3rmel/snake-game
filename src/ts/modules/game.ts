@@ -29,7 +29,7 @@ highScoreElement.innerHTML = `High Score -&gt; ${highScore}`;
 //#endregion
 
 // Atualiza a posição da comida com base no grid 30x30 do jogo
-export const updateFoodPosition = () =>
+export const updateFoodPosition = (): number[] =>
   (foodPos = [
     Math.floor(Math.random() * 30) + 1,
     Math.floor(Math.random() * 30) + 1,
@@ -56,34 +56,35 @@ export const updateVelocity = (
   velocity[1] = vy;
 };
 
-// Constantes para métodos de velocidade
-const UP: number = -1,
-  LEFT: number = -1;
-const DOWN: number = 1,
-  RIGHT: number = 1;
+export const DIRECTIONS = {
+  UP: -1,
+  DOWN: 1,
+  LEFT: -1,
+  RIGHT: 1,
+} as const;
 
 // Manipula velocidade baseado nas setinhas do teclado e controles do celular
-export const changeDirection = (e: KeyboardEvent | any) => {
-  if (e.key === "ArrowUp" && velocity[1] !== DOWN)
-    return updateVelocity(velocity, 0, UP);
-  if (e.key === "ArrowDown" && velocity[1] !== UP)
-    return updateVelocity(velocity, 0, DOWN);
-  if (e.key === "ArrowLeft" && velocity[0] !== RIGHT)
-    return updateVelocity(velocity, LEFT, 0);
-  if (e.key === "ArrowRight" && velocity[0] !== LEFT)
-    return updateVelocity(velocity, RIGHT, 0);
+export const changeDirection = (e: KeyboardEvent | any): void => {
+  if (e.key === "ArrowUp" && velocity[1] !== DIRECTIONS.DOWN)
+    return updateVelocity(velocity, 0, DIRECTIONS.UP);
+  if (e.key === "ArrowDown" && velocity[1] !== DIRECTIONS.UP)
+    return updateVelocity(velocity, 0, DIRECTIONS.DOWN);
+  if (e.key === "ArrowLeft" && velocity[0] !== DIRECTIONS.RIGHT)
+    return updateVelocity(velocity, DIRECTIONS.LEFT, 0);
+  if (e.key === "ArrowRight" && velocity[0] !== DIRECTIONS.LEFT)
+    return updateVelocity(velocity, DIRECTIONS.RIGHT, 0);
 };
 
 // EventListener para mudar direção baseada em qual tecla foi pressionada
-controlsElements.forEach((button) => {
+controlsElements.forEach((button): void => {
   if (button instanceof HTMLElement)
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (): void => {
       changeDirection({ key: button.dataset.key });
     });
 });
 
-export const updateScores = () => {
-  score++;
+export const updateScores = (): void => {
+  score += 1;
   highScore = score >= highScore ? score : highScore;
 
   localStorage.setItem("high-score", String(highScore));
@@ -134,4 +135,6 @@ const runGame = (): true | void => {
   boardElement.innerHTML = html;
 };
 
-setGameInterval = setInterval(runGame, 99);
+const GAME_TICK_RATE = 100;
+
+setGameInterval = setInterval(runGame, GAME_TICK_RATE);
