@@ -1,33 +1,37 @@
-# Snake Game 🐍
+# Snake Game
 
-Jogo da cobrinha simples feito com HTML5, CSS3 e TypeScript. (Utilizei ViteJS também)
+A simple snake game.
 
-## Hospedagem
+Built with [TypeScript](https://www.typescriptlang.org/), [Vite](https://vite.dev/), and [Phosphor Icons](https://phosphoricons.com/), deployed on [Vercel](https://vercel.com/).
 
-O projeto se encontra atualmente hospedado na [Vercel](https://vercel.com) na seguinte URL:
+## Getting Started Locally
 
-https://snake-game-h3rmel.vercel.app/
+1. Clone this repository to your local machine:
 
-## Rodando o projeto 🚀
-
-Para rodar o projeto é bastante simples, basta clonar ele:
-
-```
-git clone https://github.com/H3rmel/snake-game.git
+```bash
+git clone https://github.com/h3rmel/snake-game
 ```
 
-E após isso, acessar o repositório e digitar o seguinte comando:
+2. Move to the cloned directory
 
-```
-npm i && npm run dev
+```bash
+cd snake-game
 ```
 
-Se tudo estiver correto, você verá uma mensagem como essa:
+3. Install dependencies:
 
+```bash
+pnpm install
 ```
-VITE v4.2.1  ready in 205 ms
 
-➜  Local:   http://localhost:5173/
-➜  Network: use --host to expose
-➜  press h to show help
+4. Start the local Server:
+
+```bash
+pnpm dev
 ```
+
+And enjoy the game!
+
+## License
+
+Licensed under the [MIT license](https://github.com/h3rmel/snake-game/blob/main/LICENSE).

@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      '@phosphor-icons/web':
-        specifier: ^2.0.3
-        version: 2.1.1
     devDependencies:
       typescript:
         specifier: ^4.9.3
@@ -153,9 +149,6 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@phosphor-icons/web@2.1.1':
-    resolution: {integrity: sha512-QjrfbItu5Rb2i37GzsKxmrRHfZPTVk3oXSPBnQ2+oACDbQRWGAeB0AsvZw263n1nFouQuff+khOCtRbrc6+k+A==}
-
   esbuild@0.18.20:
     resolution: {integrity: sha512-ceqxoedUrcayh7Y7ZX6NdbbDzGROiyVBgC4PriJThBKSVPWnnFHZAkfI1lJT8QFkOwH4qOS2SJkS4wvpGl8BpA==}
     engines: {node: '>=12'}
@@ -287,8 +280,6 @@ snapshots:
 
   '@esbuild/win32-x64@0.18.20':
     optional: true
-
-  '@phosphor-icons/web@2.1.1': {}
 
   esbuild@0.18.20:
     optionalDependencies:
