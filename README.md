@@ -1,5 +1,9 @@
 # Snake Game
 
+![snake-game-gif](https://github.com/user-attachments/assets/c2e5c64f-d9fd-45c8-914d-e5d880a6b88f)
+
+---
+
 A simple snake game.
 
 Built with [TypeScript](https://www.typescriptlang.org/), [Vite](https://vite.dev/), and [Phosphor Icons](https://phosphoricons.com/), deployed on [Vercel](https://vercel.com/).
