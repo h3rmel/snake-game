@@ -2,7 +2,7 @@
 
 A snake game.
 
-deployed on [Vercel](https://vercel.com/), you can access the [game here](https://snake-game-hermel.vercel.app/).
+Deployed on [Vercel](https://vercel.com/), you can access the [game here](https://snake-game-hermel.vercel.app/).
 
 ## Getting Started Locally
 
